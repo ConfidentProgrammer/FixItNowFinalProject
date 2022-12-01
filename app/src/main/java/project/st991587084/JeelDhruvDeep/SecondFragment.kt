@@ -91,6 +91,7 @@ class SecondFragment : Fragment() {
                 LoginViewModel.AuthenticationState.AUTHENTICATED -> {
                      //binding.CustLogin.text = getString(R.string.logout_button_text)
                     if(AuthState == 1) {
+                        Log.d("authState",AuthState.toString())
                         findNavController().navigate(R.id.action_SecondFragment_to_customerDashboard)
                     }else if (AuthState == 2) {
                         findNavController().navigate(R.id.action_SecondFragment_to_professionalLogin)
