@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_customerDashboard_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_customerDashboard_to_profileCustomer"
+            app:destination="@id/profileCustomer" />
     </fragment>
     <fragment
         android:id="@+id/professionalLogin"
@@ -44,5 +47,26 @@
         <action
             android:id="@+id/action_professionalLogin_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_professionalLogin_to_profileProfessional"
+            app:destination="@id/profileProfessional" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileCustomer"
+        android:name="project.st991587084.JeelDhruvDeep.ProfileCustomer"
+        android:label="fragment_profile_customer"
+        tools:layout="@layout/fragment_profile_customer" >
+        <action
+            android:id="@+id/action_profileCustomer_to_customerDashboard"
+            app:destination="@id/customerDashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileProfessional"
+        android:name="project.st991587084.JeelDhruvDeep.ProfileProfessional"
+        android:label="fragment_profile_professional"
+        tools:layout="@layout/fragment_profile_professional" >
+        <action
+            android:id="@+id/action_profileProfessional_to_professionalLogin"
+            app:destination="@id/professionalLogin" />
     </fragment>
 </navigation>

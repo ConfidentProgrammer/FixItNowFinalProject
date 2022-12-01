@@ -36,6 +36,9 @@ class ProfessionalLogin : Fragment() {
             AuthUI.getInstance().signOut(requireContext())
             findNavController().navigate(R.id.action_professionalLogin_to_FirstFragment)
         }
+        binding.imageView.setOnClickListener{
+            findNavController().navigate(R.id.action_professionalLogin_to_profileProfessional)
+        }
 //        binding.CustLogin.setOnClickListener {
 //            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
 //        }

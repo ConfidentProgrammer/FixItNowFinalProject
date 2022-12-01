@@ -58,7 +58,10 @@ class CustomerLogin : Fragment() {
                 AuthUI.getInstance().signOut(requireContext())
             findNavController().navigate(R.id.action_customerDashboard_to_FirstFragment)
             }
+      binding.imageView.setOnClickListener{
 
+          findNavController().navigate(R.id.action_customerDashboard_to_profileCustomer)
+      }
         val ourList = generateDummyList(11)
 
         recycleView.adapter = MyRecyclerView(ourList)
