@@ -8,49 +8,13 @@
     android:background="#F6F5F5"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="265dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:background="#2196F3"
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="35dp"
-                android:foregroundGravity="center_horizontal"
-                app:cardCornerRadius="100dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/profile" />
-            </androidx.cardview.widget.CardView>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:text="Name "
-                android:textColor="#fff"
-                android:textSize="23dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-    </RelativeLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_marginTop="30dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -102,19 +66,16 @@
             <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:src="@drawable/experience"/>
+                android:src="@drawable/location"/>
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:inputType="number"
                 android:paddingLeft="15dp"
-                android:text="10"
+                android:text="Brampton, Ontario"
                 android:textColor="#000"
                 android:textSize="18dp" />
-
-
 
         </LinearLayout>
 
@@ -127,13 +88,16 @@
             <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:src="@drawable/service"/>
+                android:src="@drawable/desc"/>
 
-            <Spinner
-                android:id="@+id/spinner2"
-                android:layout_width="226dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="Description"
+                android:textColor="#000"
+                android:textSize="18dp" />
 
         </LinearLayout>
     </LinearLayout>
@@ -144,7 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:text="Save Profile"
+        android:text="Post Request"
         android:textSize="18dp" />
 
 </LinearLayout>

@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_customerDashboard_to_profileCustomer"
             app:destination="@id/profileCustomer" />
+        <action
+            android:id="@+id/action_customerDashboard_to_postRequest"
+            app:destination="@id/postRequest" />
     </fragment>
     <fragment
         android:id="@+id/professionalLogin"
@@ -68,5 +71,14 @@
         <action
             android:id="@+id/action_profileProfessional_to_professionalLogin"
             app:destination="@id/professionalLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/postRequest"
+        android:name="project.st991587084.JeelDhruvDeep.PostRequest"
+        android:label="fragment_post_request"
+        tools:layout="@layout/fragment_post_request" >
+        <action
+            android:id="@+id/action_postRequest_to_customerDashboard3"
+            app:destination="@id/customerDashboard" />
     </fragment>
 </navigation>

@@ -68,7 +68,9 @@ class CustomerLogin : Fragment() {
         recycleView.layoutManager = LinearLayoutManager(this.context)
         recycleView.setHasFixedSize(true)
         recycleView.setBackgroundColor(Color.parseColor("#effafa"))
-
+        binding.postrequest.setOnClickListener{
+            findNavController().navigate(R.id.action_customerDashboard_to_postRequest)
+        }
 
         }
     private fun generateDummyList(size: Int): List<Services> {
