@@ -2,6 +2,7 @@ package project.st991587084.JeelDhruvDeep
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,8 +17,10 @@ import com.google.firebase.auth.FirebaseAuth
 import project.st991587084.JeelDhruvDeep.databinding.FragmentCustomerLoginBinding
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
+import kotlinx.android.synthetic.main.fragment_customer_login.*
 
 //import project.st991590206.JeelDeepDhruv.databinding.FragmentCustomerLoginBinding
 
@@ -52,8 +55,33 @@ class CustomerLogin : Fragment() {
                 AuthUI.getInstance().signOut(requireContext())
             findNavController().navigate(R.id.action_customerDashboard_to_FirstFragment)
             }
+
+        val ourList = generateDummyList(11)
+
+        recycleView.adapter = MyRecyclerView(ourList)
+        recycleView.layoutManager = LinearLayoutManager(this.context)
+        recycleView.setHasFixedSize(true)
+        recycleView.setBackgroundColor(Color.parseColor("#FEF8DD"))
+
+
+        }
+    private fun generateDummyList(size: Int): List<Services> {
+        //photos
+        //names
+        val names = arrayOf("Electrical Service"
+            , "General Construction", "Grass Cutting",
+            "Home Cleaning", "Home Repair", "Landscapping", "Laundry", "Pest Control",
+        "Plumbing", "Welding", "Window Cleaning")
+        //weights
+        val list = ArrayList<Services>()
+        for (i in 0 until size) {
+            val item = Services(R.drawable.android,
+                names[i])
+            list += item
         }
 
+        return list
+    }
 
 
     }
