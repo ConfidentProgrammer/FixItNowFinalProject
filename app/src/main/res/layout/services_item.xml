@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
     android:background="#000"
+    android:backgroundTint="#FFFFFF"
     app:cardCornerRadius="20dp">
 
     <RelativeLayout
@@ -25,11 +26,11 @@
             android:id="@+id/serviceName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
+            android:layout_marginStart="51dp"
             android:layout_toEndOf="@id/image_view"
             android:text="Line 1"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
     </RelativeLayout>

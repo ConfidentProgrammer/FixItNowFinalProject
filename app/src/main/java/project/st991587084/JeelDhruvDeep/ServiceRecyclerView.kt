@@ -34,7 +34,7 @@ class MyRecyclerView (private val sampleList: List <Services>): RecyclerView.Ada
         //adding background color
         itemView.setBackgroundColor(Color.parseColor("#CAF1DE"))
         //adding elevation
-        itemView.elevation = 20f
+        itemView.elevation = 5f
 
         return MyViewHolder(itemView)
     }

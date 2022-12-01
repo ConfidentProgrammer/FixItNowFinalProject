@@ -48,7 +48,10 @@ class CustomerLogin : Fragment() {
 
 
     }
-
+    override fun onResume() {
+        super.onResume()
+        (requireActivity() as MainActivity).supportActionBar?.title = "Customer Dashboard"
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.customerSignout.setOnClickListener{
@@ -61,7 +64,7 @@ class CustomerLogin : Fragment() {
         recycleView.adapter = MyRecyclerView(ourList)
         recycleView.layoutManager = LinearLayoutManager(this.context)
         recycleView.setHasFixedSize(true)
-        recycleView.setBackgroundColor(Color.parseColor("#FEF8DD"))
+        recycleView.setBackgroundColor(Color.parseColor("#effafa"))
 
 
         }
