@@ -23,7 +23,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ProfileCustomer.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ProfileCustomer : Fragment() {
+class ProfileCustomer : Fragment() { // fragment for Customer profile
     // TODO: Rename and change types of parameters
 
     private var _binding: FragmentProfileCustomerBinding? = null
