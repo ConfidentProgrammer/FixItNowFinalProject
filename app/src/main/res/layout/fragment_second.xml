@@ -14,7 +14,13 @@
         android:text="Login as Customer"
         app:layout_constraintBottom_toTopOf="@+id/ProfLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#04D7A2"
+        app:strokeWidth="3dp"
+        android:textColor="#1D214E"
+        android:textSize="20sp"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#FFFFFF"/>
 
     <Button
         android:id="@+id/ProfLogin"
@@ -24,5 +30,11 @@
         android:text="Login As professional"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="#04D7A2"
+        app:strokeWidth="3dp"
+        android:textColor="#1D214E"
+        android:textSize="20sp"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#FFFFFF"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

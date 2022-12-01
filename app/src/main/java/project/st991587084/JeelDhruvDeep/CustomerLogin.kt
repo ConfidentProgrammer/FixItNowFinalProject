@@ -67,6 +67,9 @@ class CustomerLogin : Fragment() {
         }
     private fun generateDummyList(size: Int): List<Services> {
         //photos
+        val photos = arrayOf(R.drawable.electrical, R.drawable.architect, R.drawable.lawn,
+            R.drawable.cleaning, R.drawable.home, R.drawable.park, R.drawable.laundry,
+            R.drawable.insecticide,R.drawable.plumbing,R.drawable.welding,R.drawable.window)
         //names
         val names = arrayOf("Electrical Service"
             , "General Construction", "Grass Cutting",
@@ -75,7 +78,8 @@ class CustomerLogin : Fragment() {
         //weights
         val list = ArrayList<Services>()
         for (i in 0 until size) {
-            val item = Services(R.drawable.android,
+            val drawable = photos[i]
+            val item = Services(drawable,
                 names[i])
             list += item
         }
