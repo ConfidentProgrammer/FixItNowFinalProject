@@ -48,7 +48,7 @@ class CustomerLogin : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.signInButton.setOnClickListener{
+        binding.customerSignout.setOnClickListener{
                 AuthUI.getInstance().signOut(requireContext())
             findNavController().navigate(R.id.action_customerDashboard_to_FirstFragment)
             }
