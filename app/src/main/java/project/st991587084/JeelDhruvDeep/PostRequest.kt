@@ -1,11 +1,14 @@
 package project.st991587084.JeelDhruvDeep
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.firestore.FirebaseFirestore
 import project.st991587084.JeelDhruvDeep.databinding.FragmentPostRequestBinding
 import project.st991587084.JeelDhruvDeep.databinding.FragmentProfileCustomerBinding
 
@@ -23,7 +26,7 @@ class PostRequest : Fragment() {
     // TODO: Rename and change types of parameters
     private var _binding: FragmentPostRequestBinding? = null
 
-
+    val fireStoreDatabase = FirebaseFirestore.getInstance()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -51,6 +54,30 @@ class PostRequest : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.savebtn.setOnClickListener{
+
+            var emailpr : String = binding!!.emailpr.text.toString()
+            var phonepr : Int = binding!!.phonepr.text.toString().toInt()
+            var locationpr : String = binding!!.locationpr.text.toString()
+            var descpr : String = binding!!.descpr.text.toString()
+            val request:MutableMap<String, Any> = HashMap()
+            request["Email"] = emailpr
+            request["Phone"] = phonepr
+            request["Location"] = locationpr
+            request["Description"] = descpr
+
+            fireStoreDatabase.collection("RequestAndroid")
+                .add(request)
+                .addOnSuccessListener {
+                    Log.d("DocMsg", "Added document ${it}")
+                    Toast.makeText(this.context, "Request Posted", Toast.LENGTH_SHORT).show()
+                }
+
+            binding!!.emailpr.text.clear()
+            binding!!.phonepr.text.clear()
+            binding!!.descpr.text.clear()
+            binding!!.locationpr.text.clear()
+
+            //redirecting to the dashboard
             findNavController().navigate(R.id.action_postRequest_to_customerDashboard3)
         }
 

@@ -88,8 +88,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="15dp"
-                android:text="+1 123-(456)7890"
+                android:text="1237890"
                 android:textColor="#000"
+                android:inputType="number"
                 android:textSize="18dp" />
 
         </LinearLayout>

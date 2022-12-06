@@ -27,13 +27,14 @@
                 android:src="@drawable/gmail" />
 
             <EditText
+                android:id="@+id/emailpr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="15dp"
                 android:text="email@gmail.com"
                 android:textColor="#000"
-                android:textSize="18dp" />
+                android:textSize="18dp"/>
 
         </LinearLayout>
         <LinearLayout
@@ -48,13 +49,15 @@
                 android:src="@drawable/phone"/>
 
             <EditText
+                android:id="@+id/phonepr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="15dp"
-                android:text="+1 123-(456)7890"
+                android:text="1234"
                 android:textColor="#000"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:inputType="number"/>
 
         </LinearLayout>
         <LinearLayout
@@ -69,6 +72,7 @@
                 android:src="@drawable/location"/>
 
             <EditText
+                android:id="@+id/locationpr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -91,6 +95,7 @@
                 android:src="@drawable/desc"/>
 
             <EditText
+                android:id="@+id/descpr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
