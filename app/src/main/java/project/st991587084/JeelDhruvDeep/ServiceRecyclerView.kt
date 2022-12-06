@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.services_item.view.*
 import project.st991587084.JeelDhruvDeep.MainActivity
 import java.lang.Integer.parseInt
 
-class MyRecyclerView (private val sampleList: List <Services>): RecyclerView.Adapter <MyRecyclerView.MyViewHolder>() {
+class MyRecyclerView(private val sampleList: List<Services>): RecyclerView.Adapter <MyRecyclerView.MyViewHolder>() {
 
     class MyViewHolder(itemView:View): RecyclerView.ViewHolder(itemView){
 

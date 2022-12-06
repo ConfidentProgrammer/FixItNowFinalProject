@@ -22,7 +22,7 @@ import project.st991587084.JeelDhruvDeep.databinding.FragmentSecondBinding
  */
 class SecondFragment : Fragment() {
     private val viewModel by viewModels<LoginViewModel>()
-    private var AuthState = 1
+    private var AuthState = 2
     private var _binding: FragmentSecondBinding? = null
     companion object {
         const val TAG = "MainFragment"
@@ -46,13 +46,6 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.CustLogin.setOnClickListener {
-//            findNavController().navigate(R.id.action_SecondFragment_to_customerLogin)
-//        }
-//
-//        binding.ProfLogin.setOnClickListener{
-//            findNavController().navigate(R.id.action_SecondFragment_to_professionalLogin)
-//        }
         observeAuthenticationState()
         binding.CustLogin.setOnClickListener{
             AuthState = 1
