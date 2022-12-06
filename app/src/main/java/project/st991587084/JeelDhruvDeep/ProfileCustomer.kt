@@ -2,13 +2,17 @@ package project.st991587084.JeelDhruvDeep
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.auth.AuthUI
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_customer_login.*
 import project.st991587084.JeelDhruvDeep.databinding.FragmentCustomerLoginBinding
 import project.st991587084.JeelDhruvDeep.databinding.FragmentProfileCustomerBinding
@@ -27,7 +31,8 @@ class ProfileCustomer : Fragment() { // fragment for Customer profile
     // TODO: Rename and change types of parameters
 
     private var _binding: FragmentProfileCustomerBinding? = null
-
+    val fireStoreDatabase = FirebaseFirestore.getInstance()
+    var user = FirebaseAuth.getInstance().currentUser
 
 
     // This property is only valid between onCreateView and
@@ -58,6 +63,27 @@ class ProfileCustomer : Fragment() { // fragment for Customer profile
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.savebtn.setOnClickListener{
+            var emailpr : String = user?.email.toString()
+            var phonepr : Int = binding!!.profilePhone.text.toString().toInt()
+            var namepr : String = binding!!.profileName.text.toString()
+            var addresspr : String = binding!!.profileAddress.text.toString()
+
+
+
+            val proProfile:MutableMap<String, Any> = HashMap()
+            proProfile["Email"] = emailpr
+            proProfile["Phone"] = phonepr
+            proProfile["Name"] = namepr
+            proProfile["Address"] = addresspr
+
+            fireStoreDatabase.collection("CustomerProfileAndroid")
+                .document(it.id.toString()).set(proProfile)
+                .addOnSuccessListener {
+                    Log.d("DocMsg", "Added document ${it}")
+                    Toast.makeText(this.context, "Profile Created", Toast.LENGTH_SHORT).show()
+                    println(user?.email)
+                }
+
 
             findNavController().navigate(R.id.action_profileCustomer_to_customerDashboard)
         }

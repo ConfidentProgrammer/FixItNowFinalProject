@@ -22,7 +22,7 @@ import project.st991587084.JeelDhruvDeep.databinding.FragmentSecondBinding
  */
 class SecondFragment : Fragment() {
     private val viewModel by viewModels<LoginViewModel>()
-    private var AuthState = 2
+    private var AuthState = 1
     private var _binding: FragmentSecondBinding? = null
     companion object {
         const val TAG = "MainFragment"

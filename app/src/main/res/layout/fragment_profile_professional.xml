@@ -33,6 +33,7 @@
             </androidx.cardview.widget.CardView>
 
             <EditText
+                android:id="@+id/proName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -62,7 +63,8 @@
                 android:layout_height="45dp"
                 android:src="@drawable/gmail" />
 
-            <EditText
+            <TextView
+                android:id="@+id/proEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -84,13 +86,14 @@
                 android:src="@drawable/phone"/>
 
             <EditText
+                android:id="@+id/proPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:inputType="number"
                 android:paddingLeft="15dp"
                 android:text="1237890"
                 android:textColor="#000"
-                android:inputType="number"
                 android:textSize="18dp" />
 
         </LinearLayout>
@@ -106,6 +109,7 @@
                 android:src="@drawable/experience"/>
 
             <EditText
+                android:id="@+id/ProExp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
