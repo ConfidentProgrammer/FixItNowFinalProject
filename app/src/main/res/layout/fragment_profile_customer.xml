@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="Name "
+                android:hint="Enter Your Name"
                 android:textColor="#fff"
                 android:textSize="23dp"
                 android:textStyle="bold" />
@@ -63,13 +63,13 @@
                 android:layout_height="45dp"
                 android:src="@drawable/gmail" />
 
-            <EditText
+            <TextView
                 android:id="@+id/profileEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="15dp"
-                android:text="email@gmail.com"
+                android:text="setEmail@gmail.com"
                 android:textColor="#000"
                 android:textSize="18dp" />
 
@@ -90,8 +90,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:hint="Enter Phone"
                 android:paddingLeft="15dp"
-                android:text="12345678922"
                 android:textColor="#000"
                 android:textSize="18dp" />
 
@@ -112,8 +112,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:hint="Enter Address"
                 android:paddingLeft="15dp"
-                android:text="Brampton, Ontario"
                 android:textColor="#000"
                 android:textSize="18dp" />
 

@@ -61,6 +61,31 @@ class ProfileCustomer : Fragment() { // fragment for Customer profile
 
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        //Fetching Customer Profile
+        binding!!.profileEmail.setText(user?.email).toString()
+        fireStoreDatabase.collection("CustomerProfileAndroid")
+            .get()
+            .addOnCompleteListener{
+                val result : StringBuffer = StringBuffer()
+                if(it.isSuccessful) {
+                    for(document in it.result!!) {
+
+                        if(user?.email.toString() == document.data.getValue("Email").toString()){
+                            binding!!.profilePhone.setText(document.data.getValue("Phone").toString())
+                            binding!!.profileName.setText(document.data.getValue("Name").toString())
+                            binding!!.profileAddress.setText(document.data.getValue("Address").toString())
+                            binding!!.profileEmail.setText(user?.email).toString()
+                            println(document.data.getValue("Phone").toString() + "Phone")
+                        }
+
+                    }
+                }
+
+            }
+
+
+
+        //Creating or updating Profile
         super.onViewCreated(view, savedInstanceState)
         binding.savebtn.setOnClickListener{
             var emailpr : String = user?.email.toString()

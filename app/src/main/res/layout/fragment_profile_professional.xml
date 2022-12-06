@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
-                android:text="Name "
+                android:hint="Enter Your Name"
                 android:textColor="#fff"
                 android:textSize="23dp"
                 android:textStyle="bold" />
@@ -90,9 +90,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:hint="Enter your Phone"
                 android:inputType="number"
                 android:paddingLeft="15dp"
-                android:text="1237890"
                 android:textColor="#000"
                 android:textSize="18dp" />
 
@@ -113,9 +113,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:hint="Enter your Experience"
                 android:inputType="number"
                 android:paddingLeft="15dp"
-                android:text="10"
                 android:textColor="#000"
                 android:textSize="18dp" />
 

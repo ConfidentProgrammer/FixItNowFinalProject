@@ -57,11 +57,45 @@ class ProfileProfessional : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         var servicepr : String = ""
         val personNames = arrayOf("Electrical Service"
             , "General Construction", "Grass Cutting",
             "Home Cleaning", "Home Repair", "Landscapping", "Laundry", "Pest Control",
             "Plumbing", "Welding", "Window Cleaning")
+
+        //Fetching Details
+        binding!!.proEmail.setText(user?.email).toString()
+
+        fireStoreDatabase.collection("ProfessionalProfileAndroid")
+            .get()
+            .addOnCompleteListener{
+                val result : StringBuffer = StringBuffer()
+                if(it.isSuccessful) {
+                    for(document in it.result!!) {
+
+                        if(user?.email.toString() == document.data.getValue("Email").toString()){
+                            binding!!.proPhone.setText(document.data.getValue("Phone").toString())
+                            binding!!.proName.setText(document.data.getValue("Name").toString())
+                            binding!!.ProExp.setText(document.data.getValue("Experience").toString())
+                            var i = 0
+                            for (s in personNames){
+                                i += 1
+                                if(s == document.data.getValue("Service").toString()){
+                                    break
+                                }
+                            }
+                            binding!!.spinner2.setSelection(i-1)
+                            println(document.data.getValue("Phone").toString() + "Phone")
+                        }
+
+                    }
+                }
+
+            }
+
+        //Creating Profile
+
         val arrayAdaptor = ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, personNames)
 
         binding.spinner2.adapter = arrayAdaptor
