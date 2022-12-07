@@ -13,20 +13,21 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.internal.ContextUtils.getActivity
+import com.google.api.Context
 import kotlinx.android.synthetic.main.request_item.view.*
 import kotlinx.android.synthetic.main.services_item.view.*
 import kotlinx.android.synthetic.main.services_item.view.rl
 import project.st991587084.JeelDhruvDeep.MainActivity
 import java.lang.Integer.parseInt
 
-class RequestRecyclerView (private val sampleList: List <Requests>): RecyclerView.Adapter <RequestRecyclerView.MyViewHolder>() {
+class RequestRecyclerView(private val sampleList: ArrayList <Requests>, val context: android.content.Context): RecyclerView.Adapter <RequestRecyclerView.MyViewHolder>() {
 
     class MyViewHolder(itemView:View): RecyclerView.ViewHolder(itemView){
 
-        val imageView: ImageView=itemView.img_view
-        val email: TextView =itemView.email
+      //  val imageView: ImageView=itemView.img_view
+      val description: TextView = itemView.description
         val phone: TextView = itemView.phone
-        val description: TextView = itemView.description
+        val email: TextView =itemView.email
         val location: TextView = itemView.location
         val rl : RelativeLayout = itemView.rl
     }
@@ -48,7 +49,7 @@ class RequestRecyclerView (private val sampleList: List <Requests>): RecyclerVie
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = sampleList [position]
-        holder.imageView.setImageResource(currentItem.imageResource)
+//        holder.imageView.setImageResource(currentItem.imageResource)
         holder.email.text = (currentItem.Email)
         holder.phone.text = currentItem.Phone.toString()
         holder.description.text = currentItem.Description
