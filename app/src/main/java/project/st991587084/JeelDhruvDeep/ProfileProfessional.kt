@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import kotlinx.android.synthetic.main.request_item.*
 import project.st991587084.JeelDhruvDeep.databinding.FragmentProfileProfessionalBinding
 
@@ -30,7 +31,7 @@ class ProfileProfessional : Fragment() {
     private var _binding: FragmentProfileProfessionalBinding? = null
     val fireStoreDatabase = FirebaseFirestore.getInstance()
     var user = FirebaseAuth.getInstance().currentUser
-
+var isThere = false
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -58,9 +59,8 @@ class ProfileProfessional : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var servicepr : String = ""
-        val personNames = arrayOf("Electrical Service"
-            , "General Construction", "Grass Cutting",
+        var servicepr: String = ""
+        val personNames = arrayOf("Electrical Service", "General Construction", "Grass Cutting",
             "Home Cleaning", "Home Repair", "Landscapping", "Laundry", "Pest Control",
             "Plumbing", "Welding", "Window Cleaning")
 
@@ -69,23 +69,24 @@ class ProfileProfessional : Fragment() {
 
         fireStoreDatabase.collection("ProfessionalProfileAndroid")
             .get()
-            .addOnCompleteListener{
-                val result : StringBuffer = StringBuffer()
-                if(it.isSuccessful) {
-                    for(document in it.result!!) {
+            .addOnCompleteListener {
+                val result: StringBuffer = StringBuffer()
+                if (it.isSuccessful) {
+                    for (document in it.result!!) {
 
-                        if(user?.email.toString() == document.data.getValue("Email").toString()){
+                        if (user?.email.toString() == document.data.getValue("Email").toString()) {
                             binding!!.proPhone.setText(document.data.getValue("Phone").toString())
                             binding!!.proName.setText(document.data.getValue("Name").toString())
-                            binding!!.ProExp.setText(document.data.getValue("Experience").toString())
+                            binding!!.ProExp.setText(document.data.getValue("Experience")
+                                .toString())
                             var i = 0
-                            for (s in personNames){
+                            for (s in personNames) {
                                 i += 1
-                                if(s == document.data.getValue("Service").toString()){
+                                if (s == document.data.getValue("Service").toString()) {
                                     break
                                 }
                             }
-                            binding!!.spinner2.setSelection(i-1)
+                            binding!!.spinner2.setSelection(i - 1)
                             println(document.data.getValue("Phone").toString() + "Phone")
                         }
 
@@ -96,11 +97,12 @@ class ProfileProfessional : Fragment() {
 
         //Creating Profile
 
-        val arrayAdaptor = ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, personNames)
+        val arrayAdaptor =
+            ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, personNames)
 
         binding.spinner2.adapter = arrayAdaptor
 
-        binding.spinner2.onItemSelectedListener =object:
+        binding.spinner2.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 servicepr = personNames[p2]
@@ -110,39 +112,58 @@ class ProfileProfessional : Fragment() {
             }
 
         }
-        binding.savebtn.setOnClickListener{
+        binding.savebtn.setOnClickListener {
 
-            var emailpr : String = user?.email.toString()
-            var phonepr : Int = binding!!.proPhone.text.toString().toInt()
-            var namepr : String = binding!!.proName.text.toString()
-            var exppr : Int = binding!!.ProExp.text.toString().toInt()
-
-
-
-            val proProfile:MutableMap<String, Any> = HashMap()
+            var emailpr: String = user?.email.toString()
+            var phonepr: Int = binding!!.proPhone.text.toString().toInt()
+            var namepr: String = binding!!.proName.text.toString()
+            var exppr: Int = binding!!.ProExp.text.toString().toInt()
+            val proProfile: MutableMap<String, Any> = HashMap()
             proProfile["Email"] = emailpr
             proProfile["Phone"] = phonepr
             proProfile["Name"] = namepr
             proProfile["Experience"] = exppr
             proProfile["Service"] = servicepr
 
+
+
+
+
+
             fireStoreDatabase.collection("ProfessionalProfileAndroid")
-                .document(it.id.toString()).set(proProfile)
-                .addOnSuccessListener {
-                    Log.d("DocMsg", "Added document ${it}")
-                    Toast.makeText(this.context, "Profile Created", Toast.LENGTH_SHORT).show()
-                    println(user?.email)
+                .get()
+                .addOnCompleteListener {
+                    val result: StringBuffer = StringBuffer()
+                    if (it.isSuccessful) {
+                        for (document in it.result!!) {
+
+                            if (user?.email.toString() == document.data.getValue("Email").toString()) {
+                                fireStoreDatabase.collection("ProfessionalProfileAndroid")
+                                    .document(id.toString()).set(proProfile, SetOptions.merge() )
+                                    .addOnSuccessListener {
+                                        Log.d("DocMsg", "Added document ${it}")
+                                        Toast.makeText(this.context, "Profile Created", Toast.LENGTH_SHORT).show()
+                                        println(user?.email)
+                                        isThere = true
+                                    }
+                                    break
+                            }
+
+                        }
+                        println("isThere = "+ isThere)
+                        if(isThere == false) {
+                            fireStoreDatabase.collection("ProfessionalProfileAndroid")
+                                .add(proProfile)
+                        }
+                    }
+
                 }
 
 
-            binding!!.proName.text.clear()
-            binding!!.proPhone.text.clear()
-            binding!!.ProExp.text.clear()
+
 
             findNavController().navigate(R.id.action_profileProfessional_to_professionalLogin)
         }
-
-
     }
     companion object {
         /**
