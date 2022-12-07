@@ -17,10 +17,6 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.services_item.view.*
 
 class MyRecyclerView(private val sampleList: List<Services>): RecyclerView.Adapter <MyRecyclerView.MyViewHolder>() {
-    private var customInterface: CustomInterface? = null
-    fun MyRecyclerView(customInterface: CustomInterface?) {
-        this.customInterface = customInterface
-    }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

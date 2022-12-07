@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_customer_login.*
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 
-class CustomerLogin : Fragment(), CustomInterface {
+class CustomerLogin : Fragment() {
 
     private var _binding: FragmentCustomerLoginBinding? = null
 
@@ -83,11 +83,6 @@ class CustomerLogin : Fragment(), CustomInterface {
         }
 
         return list
-    }
-
-    override fun filterService() {
-        findNavController().navigate(R.id.action_customerDashboard_to_filterService)
-        println("In filtersevier")
     }
 
 
