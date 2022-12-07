@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_customer_login.*
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 
-class CustomerLogin : Fragment() {
+class CustomerLogin : Fragment(), CustomInterface {
 
     private var _binding: FragmentCustomerLoginBinding? = null
 
@@ -60,8 +60,8 @@ class CustomerLogin : Fragment() {
         recycleView.setBackgroundColor(Color.parseColor("#effafa"))
         binding.postrequest.setOnClickListener{
             findNavController().navigate(R.id.action_customerDashboard_to_postRequest)
-        }
 
+        }
         }
     private fun generateDummyList(size: Int): List<Services> {
         //photos
@@ -85,5 +85,10 @@ class CustomerLogin : Fragment() {
         return list
     }
 
-
+    override fun filterService() {
+        findNavController().navigate(R.id.action_customerDashboard_to_filterService)
+        println("In filtersevier")
     }
+
+
+}

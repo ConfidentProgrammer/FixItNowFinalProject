@@ -1,26 +1,35 @@
 package project.st991587084.JeelDhruvDeep
 
 
+import android.app.Activity
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.internal.ContextUtils.getActivity
+import com.google.api.Context
 import kotlinx.android.synthetic.main.request_item.view.*
+import kotlinx.android.synthetic.main.services_item.view.*
 import kotlinx.android.synthetic.main.services_item.view.rl
+import project.st991587084.JeelDhruvDeep.MainActivity
+import java.lang.Integer.parseInt
 
-class RequestRecyclerView(private val sampleList: ArrayList <Requests>, val context: android.content.Context): RecyclerView.Adapter <RequestRecyclerView.MyViewHolder>() {
+class ServiceDetailRecyclerView(private val sampleList: ArrayList <ServiceDetail>, val context: android.content.Context): RecyclerView.Adapter <ServiceDetailRecyclerView.MyViewHolder>() {
 
     class MyViewHolder(itemView:View): RecyclerView.ViewHolder(itemView){
 
-      //  val imageView: ImageView=itemView.img_view
-      val description: TextView = itemView.experience
+        //  val imageView: ImageView=itemView.img_view
+        val experience: TextView = itemView.experience
         val phone: TextView = itemView.phone
         val email: TextView =itemView.email
-        val location: TextView = itemView.name
+        val name: TextView = itemView.name
         val rl : RelativeLayout = itemView.rl
     }
 
@@ -42,10 +51,10 @@ class RequestRecyclerView(private val sampleList: ArrayList <Requests>, val cont
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = sampleList [position]
 //        holder.imageView.setImageResource(currentItem.imageResource)
-        holder.email.text = (currentItem.Email)
-        holder.phone.text = currentItem.Phone.toString()
-        holder.description.text = currentItem.Description
-        holder.location.text = currentItem.Location
+        holder.email.text = "Email: "+(currentItem.Email)
+        holder.phone.text = "Phone: "+currentItem.Phone.toString()
+        holder.name.text = "Name: "+currentItem.Name
+        holder.experience.text = "Experience: "+currentItem.Experience.toString()
 
 
         holder.rl.setOnClickListener {

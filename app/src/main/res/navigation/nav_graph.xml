@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_customerDashboard_to_postRequest"
             app:destination="@id/postRequest" />
+        <action
+            android:id="@+id/action_customerDashboard_to_filterService"
+            app:destination="@id/filterService" />
     </fragment>
     <fragment
         android:id="@+id/professionalLogin"
@@ -81,4 +84,9 @@
             android:id="@+id/action_postRequest_to_customerDashboard3"
             app:destination="@id/customerDashboard" />
     </fragment>
+    <fragment
+        android:id="@+id/filterService"
+        android:name="project.st991587084.JeelDhruvDeep.FilterService"
+        android:label="fragment_filter_service"
+        tools:layout="@layout/fragment_filter_service" />
 </navigation>

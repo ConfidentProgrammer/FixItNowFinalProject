@@ -46,99 +46,16 @@ class ProfessionalLogin : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.professionalSignout.setOnClickListener{
+        binding.professionalSignout.setOnClickListener {
             AuthUI.getInstance().signOut(requireContext())
             findNavController().navigate(R.id.action_professionalLogin_to_FirstFragment)
         }
-        binding.imageView.setOnClickListener{
+        binding.imageView.setOnClickListener {
             findNavController().navigate(R.id.action_professionalLogin_to_profileProfessional)
         }
 
         loadAllData()
-
-
-//        fireStoreDatabase.collection("RequestAndroid")
-//            .get()
-//            .addOnCompleteListener{
-//                val result : StringBuffer = StringBuffer()
-//                if(it.isSuccessful) {
-//                    var temp = 0
-//                    for(document in it.result!!) {
-//                        temp += 1
-//                    }
-//
-//                    binding.count.text = temp.toString()
-//               //
-//                }
-//                //     binding?.textView?.setText(result)
-////                println("size = "+ count)
-//                 list = generateDummyList(count)
-
-      //  println("size = "+ binding.count.text)
-      //  val list = generateDummyList(binding.count.text.toString().toInt()+1)
-//        recycleView.adapter = RequestRecyclerView(list)
-//        recycleView.layoutManager = LinearLayoutManager(this.context)
-//        recycleView.setHasFixedSize(true)
-//        recycleView.setBackgroundColor(Color.parseColor("#effafa"))
-
-
-//        binding.CustLogin.setOnClickListener {
-//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-          }
-
-
-   // private fun generateDummyList(size: Int): List<Requests> {
-//        val list = ArrayList<Requests>()
-//        var email = arrayListOf<String>("123@gmail.com")
-//        val photos = arrayOf(R.drawable.android)
-//
-//        //reading data from firestore
-//
-//        fireStoreDatabase.collection("RequestAndroid")
-//            .get()
-//            .addOnCompleteListener {
-//                val result: StringBuffer = StringBuffer()
-//                if (it.isSuccessful) {
-//                    for (document in it.result!!) {
-//
-//                        val ema = (document.data.getValue("Email").toString())
-//                        email.add(ema)
-//
-//                        println("email = " + email)
-//                        val drawable = R.drawable.android
-//                        val item = Requests(
-//                            drawable,
-//                            "", 123, email.size.toString(), ""
-//                        )
-//                        list += item
-//
-//                        //    val description = arrayOf(document.data.getValue(""))
-//                    }
-//
-//                }
-//                for (i in 0 until size) {
-//                    println("in for")
-//                    val drawable = R.drawable.android
-//                    val item = Requests(
-//                        drawable,
-//                        "", 123, email[i], ""
-//                    )
-//                    list += item
-////        }
-//                }
-//
-////        val list = ArrayList<Requests>()
-//                //println("123size = " +size)
-////        for (i in 0 until size) {
-////            val drawable = R.drawable.android
-////            val item = Requests(drawable,
-////                "",123,email.size.toString(),"")
-////            list += item
-//
-//            }
-//        return list
-
-    //}
+    }
 
 
     fun loadAllData(){
