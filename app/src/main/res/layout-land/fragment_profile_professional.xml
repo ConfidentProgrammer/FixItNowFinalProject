@@ -232,7 +232,8 @@
                 android:hint="Enter Phone"
                 android:paddingLeft="15dp"
                 android:textColor="#000"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:inputType="number"/>
 
         </LinearLayout>
 
