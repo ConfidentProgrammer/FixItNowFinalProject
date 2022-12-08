@@ -115,31 +115,6 @@ var isThere = false
         binding.savebtn.setOnClickListener {
 
 
-/*            binding.savebtn.setOnClickListener{
-                var emailpr : String = user?.email.toString()
-                var phonepr : Int = binding!!.profilePhone.text.toString().toInt()
-                var namepr : String = binding!!.profileName.text.toString()
-                var addresspr : String = binding!!.profileAddress.text.toString()
-
-
-
-                val proProfile:MutableMap<String, Any> = HashMap()
-                proProfile["Email"] = emailpr
-                proProfile["Phone"] = phonepr
-                proProfile["Name"] = namepr
-                proProfile["Address"] = addresspr
-
-                fireStoreDatabase.collection("CustomerProfileAndroid")
-                    .document(emailpr).set(proProfile, SetOptions.merge())
-                    .addOnSuccessListener {
-                        Log.d("DocMsg", "Added document ${it}")
-                        Toast.makeText(this.context, "Profile Created", Toast.LENGTH_SHORT).show()
-                        println(user?.email)
-                    }
-
-
-                findNavController().navigate(R.id.action_profileCustomer_to_customerDashboard)
-            }*/
             var emailpr: String = user?.email.toString()
             var phonepr: Int = binding!!.proPhone.text.toString().toInt()
             var namepr: String = binding!!.proName.text.toString()
