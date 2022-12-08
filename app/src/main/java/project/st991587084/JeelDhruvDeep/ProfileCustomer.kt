@@ -13,7 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import kotlinx.android.synthetic.main.fragment_customer_login.*
+import kotlinx.android.synthetic.main.request_item.view.*
+import kotlinx.coroutines.flow.merge
 import project.st991587084.JeelDhruvDeep.databinding.FragmentCustomerLoginBinding
 import project.st991587084.JeelDhruvDeep.databinding.FragmentProfileCustomerBinding
 
@@ -102,7 +105,7 @@ class ProfileCustomer : Fragment() { // fragment for Customer profile
             proProfile["Address"] = addresspr
 
             fireStoreDatabase.collection("CustomerProfileAndroid")
-                .document(it.id.toString()).set(proProfile)
+                .document(emailpr).set(proProfile, SetOptions.merge())
                 .addOnSuccessListener {
                     Log.d("DocMsg", "Added document ${it}")
                     Toast.makeText(this.context, "Profile Created", Toast.LENGTH_SHORT).show()

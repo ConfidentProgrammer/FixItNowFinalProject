@@ -26,7 +26,7 @@ class RequestRecyclerView(private val sampleList: ArrayList <Requests>, val cont
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.service_detail_item,
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.request_item,
             parent, false)
 
         //adding background color
