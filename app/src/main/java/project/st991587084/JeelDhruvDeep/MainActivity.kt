@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
             }
              R.id.help -> {
                  Navigation.findNavController(this,R.id.nav_host_fragment_content_main).navigate(R.id.action_FirstFragment_to_help2)
-
              }
         }
         return super.onOptionsItemSelected(item)
