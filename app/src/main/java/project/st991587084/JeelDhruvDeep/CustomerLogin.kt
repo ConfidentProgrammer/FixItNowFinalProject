@@ -3,6 +3,7 @@ package project.st991587084.JeelDhruvDeep
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -38,6 +39,17 @@ class CustomerLogin : Fragment() {
 
 
     }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.clear()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onResume() {
         super.onResume()
         (requireActivity() as MainActivity).supportActionBar?.title = "Customer Dashboard"
@@ -52,6 +64,9 @@ class CustomerLogin : Fragment() {
 
           findNavController().navigate(R.id.action_customerDashboard_to_profileCustomer)
       }
+        binding.manRequests.setOnClickListener{
+            findNavController().navigate(R.id.action_customerDashboard_to_manageRequest)
+        }
         val ourList = generateDummyList(11)
 
         recycleView.adapter = MyRecyclerView(ourList)

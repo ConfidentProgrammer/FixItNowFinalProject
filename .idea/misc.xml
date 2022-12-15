@@ -7,11 +7,6 @@
         <entry key="..\:/SHERIDAN/SEM 6/Advanced Android/FinalProject/FixItNowFinalProject/FixItNowFinalProject/app/src/main/res/layout/fragment_professional_login.xml" value="0.1" />
         <entry key="..\:/SHERIDAN/SEM 6/Advanced Android/FinalProject/FixItNowFinalProject/FixItNowFinalProject/app/src/main/res/menu/menu_main.xml" value="0.25" />
         <entry key="..\:/SHERIDAN/SEM 6/Advanced Android/FinalProject/FixItNowFinalProject/FixItNowFinalProject/app/src/main/res/xml/settings.xml" value="0.24230072463768115" />
-        <entry key="..\:/SHERIDAN/SEM 6/Advanced Android/Fix it now final project/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/SHERIDAN/SEM 6/Advanced Android/Fix it now final project/app/src/main/res/layout/content_main.xml" value="0.25" />
-        <entry key="..\:/SHERIDAN/SEM 6/Advanced Android/Fix it now final project/app/src/main/res/layout/fragment_about_us.xml" value="0.25" />
-        <entry key="..\:/SHERIDAN/SEM 6/Advanced Android/Fix it now final project/app/src/main/res/layout/fragment_help.xml" value="0.25" />
-        <entry key="..\:/SHERIDAN/SEM 6/Advanced Android/Fix it now final project/app/src/main/res/menu/menu_main.xml" value="0.25" />
         <entry key="..\:/SHERIDAN/SEM 6/Advanced Android/Fixitnow final project/app/src/main/res/layout/fragment_customer_login.xml" value="0.1" />
         <entry key="..\:/Semester6sheridan/Android/FixItNowFinalProject/app/src/main/res/layout/fragment_professional_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Semester6sheridan/Android/FixItNowFinalProject/app/src/main/res/layout/fragment_profile_customer.xml" value="0.264" />
@@ -24,18 +19,24 @@
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout-land/second_fragment_land.xml" value="0.1453125" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/activity_main.xml" value="0.10869565217391304" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/content_main.xml" value="0.10869565217391304" />
+        <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_about_us.xml" value="0.31927083333333334" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_customer_login.xml" value="0.264" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_filter_service.xml" value="0.17798913043478262" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_first.xml" value="0.27760416666666665" />
+        <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_help.xml" value="0.264" />
+        <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_help_professional.xml" value="0.17831813576494426" />
+        <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_manage_request.xml" value="0.36666666666666664" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_post_request.xml" value="0.264" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_professional_login.xml" value="0.264" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_professionaldashboard.xml" value="0.15806159420289856" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_profile_customer.xml" value="0.4" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_profile_professional.xml" value="0.4" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/fragment_second.xml" value="0.34692028985507245" />
+        <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/manage_request_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/request_item.xml" value="0.27760416666666665" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/service_detail_item.xml" value="0.2765625" />
         <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/layout/services_item.xml" value="0.42328042328042326" />
+        <entry key="..\:/Sheridan/SEM6/Android/FInalFinalProject/app/src/main/res/menu/menu_main.xml" value="0.18802083333333333" />
         <entry key="..\:/Sheridan/SEM6/Android/FixItNowFinalProject/FInalFinalProject/app/src/main/res/layout/fragment_first.xml" value="0.10555555555555556" />
         <entry key="..\:/Sheridan/SEM6/Android/FixItNowFinalProject/FInalFinalProject/app/src/main/res/layout/fragment_second.xml" value="0.10555555555555556" />
       </map>

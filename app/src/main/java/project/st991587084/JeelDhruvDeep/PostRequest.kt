@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import project.st991587084.JeelDhruvDeep.databinding.FragmentPostRequestBinding
 import project.st991587084.JeelDhruvDeep.databinding.FragmentProfileCustomerBinding
@@ -27,7 +29,7 @@ class PostRequest : Fragment() {
     private var _binding: FragmentPostRequestBinding? = null
 
     val fireStoreDatabase = FirebaseFirestore.getInstance()
-
+    var user = FirebaseAuth.getInstance().currentUser
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -37,11 +39,17 @@ class PostRequest : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
     }
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.clear()
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,9 +61,10 @@ class PostRequest : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding!!.emailpr.setText(user?.email).toString()
         binding.savebtn.setOnClickListener{
 
-            var emailpr : String = binding!!.emailpr.text.toString()
+            var emailpr : String = user?.email.toString()
             var phonepr : Int = binding!!.phonepr.text.toString().toInt()
             var locationpr : String = binding!!.locationpr.text.toString()
             var descpr : String = binding!!.descpr.text.toString()
@@ -72,7 +81,7 @@ class PostRequest : Fragment() {
                     Toast.makeText(this.context, "Request Posted", Toast.LENGTH_SHORT).show()
                 }
 
-            binding!!.emailpr.text.clear()
+
             binding!!.phonepr.text.clear()
             binding!!.descpr.text.clear()
             binding!!.locationpr.text.clear()
