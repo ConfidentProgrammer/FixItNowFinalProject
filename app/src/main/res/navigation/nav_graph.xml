@@ -14,6 +14,12 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_aboutUs2"
+            app:destination="@id/aboutUs2" />
+        <action
+            android:id="@+id/action_FirstFragment_to_help2"
+            app:destination="@id/help2" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -89,4 +95,14 @@
         android:name="project.st991587084.JeelDhruvDeep.FilterService"
         android:label="fragment_filter_service"
         tools:layout="@layout/fragment_filter_service" />
+    <fragment
+        android:id="@+id/aboutUs2"
+        android:name="project.st991587084.JeelDhruvDeep.AboutUs"
+        android:label="AboutUs"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/help2"
+        android:name="project.st991587084.JeelDhruvDeep.help"
+        android:label="help"
+        tools:layout="@layout/fragment_help"/>
 </navigation>
