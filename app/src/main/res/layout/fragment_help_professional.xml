@@ -24,7 +24,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Help For Customer"
+                android:text="Help For Professional"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="1. Press on the button that says Login as Customer"
+                android:text="1. Press on the button that says Login as Professional"
                 android:textSize="16sp" />
 
             <ImageView
@@ -48,70 +48,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="2. Put in your credentials and after loggin in you will see the customer dashboard"
+                android:text="2. Put in your credentials and after loggin in you will see the professional dashboard where you can browse the requests posted by customers with their contact info"
                 android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/imageView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/customerdash" />
+                android:src="@drawable/profdash" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="3. From here you can first create your profile by pressing on that profile icon on top right corner"
+                android:text="3. Press the profile icon where you can create profile for professional"
                 android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/imageView12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/customerprof" />
+                android:src="@drawable/profprof" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="4. After saving your profile you can post the request by pressing the post request button on Customer Dashboard"
+                android:text="4. After creation of the profile you profile will be visible on customer side when they browse the service you are providing "
                 android:textSize="16sp" />
 
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/customerpost" />
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="5. You can also browse experienced professionals for individual services by clicking on those services"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:id="@+id/imageView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/customerserv" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="6. You can also delete the request by clicking on Requests button from customer dashboard"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/customermanrequest" />
         </LinearLayout>
     </ScrollView>
 

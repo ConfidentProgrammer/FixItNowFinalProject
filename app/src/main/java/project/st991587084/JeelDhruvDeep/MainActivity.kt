@@ -51,6 +51,10 @@ class MainActivity : AppCompatActivity() {
                  Navigation.findNavController(this,R.id.nav_host_fragment_content_main).navigate(R.id.action_FirstFragment_to_help2)
 
              }
+             R.id.helpProfessional -> {
+                 Navigation.findNavController(this,R.id.nav_host_fragment_content_main).navigate(R.id.action_FirstFragment_to_helpProfessional)
+
+             }
         }
         return super.onOptionsItemSelected(item)
     }

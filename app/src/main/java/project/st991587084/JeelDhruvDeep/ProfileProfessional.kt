@@ -3,6 +3,7 @@ package project.st991587084.JeelDhruvDeep
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
@@ -41,11 +42,17 @@ var isThere = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
     }
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.clear()
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

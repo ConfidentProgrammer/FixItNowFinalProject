@@ -10,6 +10,11 @@
     <item
         android:id="@+id/help"
         android:orderInCategory="100"
-        android:title="Help"
+        android:title="Help For Customer"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/helpProfessional"
+        android:orderInCategory="100"
+        android:title="Help For Professional"
         app:showAsAction="never" />
 </menu>

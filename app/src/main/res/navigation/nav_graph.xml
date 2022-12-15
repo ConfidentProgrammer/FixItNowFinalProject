@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_help2"
             app:destination="@id/help2" />
+        <action
+            android:id="@+id/action_FirstFragment_to_helpProfessional"
+            app:destination="@id/helpProfessional" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -50,6 +53,9 @@
         <action
             android:id="@+id/action_customerDashboard_to_filterService"
             app:destination="@id/filterService" />
+        <action
+            android:id="@+id/action_customerDashboard_to_manageRequest"
+            app:destination="@id/manageRequest" />
     </fragment>
     <fragment
         android:id="@+id/professionalLogin"
@@ -105,4 +111,14 @@
         android:name="project.st991587084.JeelDhruvDeep.help"
         android:label="help"
         tools:layout="@layout/fragment_help"/>
+    <fragment
+        android:id="@+id/helpProfessional"
+        android:name="project.st991587084.JeelDhruvDeep.HelpProfessional"
+        android:label="fragment_help_professional"
+        tools:layout="@layout/fragment_help_professional" />
+    <fragment
+        android:id="@+id/manageRequest"
+        android:name="project.st991587084.JeelDhruvDeep.ManageRequest"
+        android:label="fragment_manage_request"
+        tools:layout="@layout/fragment_manage_request" />
 </navigation>

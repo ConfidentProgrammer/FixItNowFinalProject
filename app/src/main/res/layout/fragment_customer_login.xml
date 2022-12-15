@@ -9,41 +9,55 @@
     >
 
 
-    <Button
-        android:id="@+id/postrequest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:text="Post Request" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/customerSignout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="200dp"
-        android:text="Sign Out" />
+        <Button
+            android:id="@+id/postrequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Post Request"
+            android:textSize="12sp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="26dp"
-        app:srcCompat="@drawable/profile" />
+        <Button
+            android:id="@+id/manRequests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Requests"
+            android:textSize="12sp" />
 
+        <Button
+            android:id="@+id/customerSignout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Sign Out"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="5dp"
+            app:srcCompat="@drawable/profile" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
-        android:layout_height="681dp"
+        android:layout_height="602dp"
         android:layout_marginTop="50dp"
         android:clipToPadding="false"
         android:padding="4dp"
         tools:listitem="@layout/services_item" />
 
 
-
-<!--    <LinearLayout-->
+    <!--    <LinearLayout-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="680dp"-->
 <!--        android:layout_alignParentBottom="true"-->
